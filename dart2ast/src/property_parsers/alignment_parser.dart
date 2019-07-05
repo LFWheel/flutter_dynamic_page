@@ -1,0 +1,15 @@
+import 'base_parser.dart';
+import 'package:analyzer/analyzer.dart';
+class AlignmentParser extends BaseParser{
+  @override
+  parse(Expression exp) {
+    if(exp is PrefixedIdentifier){
+      PrefixedIdentifier pexp = exp;
+      print(pexp.toString());
+    }else{
+      print("alignment属性赋值不规范");
+      return null;
+    }
+  }
+
+}

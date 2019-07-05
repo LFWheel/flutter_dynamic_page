@@ -1,0 +1,135 @@
+Type: ImportDirectiveImpl, body: import 'package:flutter/material.dart';
+Type: ClassDeclarationImpl, body: class FollowedTopicCard extends StatelessWidget {@override Widget build(BuildContext context) {return new Container(padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0), child: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {}));}}
+Type: KeywordToken, body: import
+Type: SimpleStringLiteralImpl, body: 'package:flutter/material.dart'
+Type: SimpleToken, body: ;
+Type: KeywordToken, body: class
+Type: DeclaredSimpleIdentifier, body: FollowedTopicCard
+Type: ExtendsClauseImpl, body: extends StatelessWidget
+Type: BeginToken, body: {
+Type: MethodDeclarationImpl, body: @override Widget build(BuildContext context) {return new Container(padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0), child: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {}));}
+Type: SimpleToken, body: }
+Type: StringToken, body: 'package:flutter/material.dart'
+Type: StringToken, body: FollowedTopicCard
+Type: KeywordToken, body: extends
+Type: TypeNameImpl, body: StatelessWidget
+Type: AnnotationImpl, body: @override
+Type: TypeNameImpl, body: Widget
+Type: DeclaredSimpleIdentifier, body: build
+Type: FormalParameterListImpl, body: (BuildContext context)
+Type: BlockFunctionBodyImpl, body: {return new Container(padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0), child: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {}));}
+Type: SimpleIdentifierImpl, body: StatelessWidget
+Type: SimpleToken, body: @
+Type: SimpleIdentifierImpl, body: override
+Type: SimpleIdentifierImpl, body: Widget
+Type: StringToken, body: build
+Type: BeginToken, body: (
+Type: SimpleFormalParameterImpl, body: BuildContext context
+Type: SimpleToken, body: )
+Type: BlockImpl, body: {return new Container(padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0), child: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {}));}
+Type: StringToken, body: StatelessWidget
+Type: StringToken, body: override
+Type: StringToken, body: Widget
+Type: TypeNameImpl, body: BuildContext
+Type: DeclaredSimpleIdentifier, body: context
+Type: BeginToken, body: {
+Type: ReturnStatementImpl, body: return new Container(padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0), child: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {}));
+Type: SimpleToken, body: }
+Type: SimpleIdentifierImpl, body: BuildContext
+Type: StringToken, body: context
+Type: KeywordToken, body: return
+Type: InstanceCreationExpressionImpl, body: new Container(padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0), child: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {}))
+Type: SimpleToken, body: ;
+Type: StringToken, body: BuildContext
+Type: KeywordToken, body: new
+Type: ConstructorNameImpl, body: Container
+Type: ArgumentListImpl, body: (padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0), child: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {}))
+Type: TypeNameImpl, body: Container
+Type: BeginToken, body: (
+Type: NamedExpressionImpl, body: padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0)
+Type: NamedExpressionImpl, body: child: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {})
+Type: SimpleToken, body: )
+Type: SimpleIdentifierImpl, body: Container
+Type: LabelImpl, body: padding:
+Type: InstanceCreationExpressionImpl, body: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0)
+Type: LabelImpl, body: child:
+Type: InstanceCreationExpressionImpl, body: new InkWell(child: new Center(child: const Text('Plugin example app')), onTap: () {})
+Type: StringToken, body: Container
+Type: SimpleIdentifierImpl, body: padding
+Type: SimpleToken, body: :
+Type: KeywordToken, body: const
+Type: ConstructorNameImpl, body: EdgeInsets.fromLTRB
+Type: ArgumentListImpl, body: (12.0, 8.0, 12.0, 0.0)
+Type: SimpleIdentifierImpl, body: child
+Type: SimpleToken, body: :
+Type: KeywordToken, body: new
+Type: ConstructorNameImpl, body: InkWell
+Type: ArgumentListImpl, body: (child: new Center(child: const Text('Plugin example app')), onTap: () {})
+Type: StringToken, body: padding
+Type: TypeNameImpl, body: EdgeInsets.fromLTRB
+Type: BeginToken, body: (
+Type: DoubleLiteralImpl, body: 12.0
+Type: DoubleLiteralImpl, body: 8.0
+Type: DoubleLiteralImpl, body: 12.0
+Type: DoubleLiteralImpl, body: 0.0
+Type: SimpleToken, body: )
+Type: StringToken, body: child
+Type: TypeNameImpl, body: InkWell
+Type: BeginToken, body: (
+Type: NamedExpressionImpl, body: child: new Center(child: const Text('Plugin example app'))
+Type: NamedExpressionImpl, body: onTap: () {}
+Type: SimpleToken, body: )
+Type: PrefixedIdentifierImpl, body: EdgeInsets.fromLTRB
+Type: StringToken, body: 12.0
+Type: StringToken, body: 8.0
+Type: StringToken, body: 12.0
+Type: StringToken, body: 0.0
+Type: SimpleIdentifierImpl, body: InkWell
+Type: LabelImpl, body: child:
+Type: InstanceCreationExpressionImpl, body: new Center(child: const Text('Plugin example app'))
+Type: LabelImpl, body: onTap:
+Type: FunctionExpressionImpl, body: () {}
+Type: SimpleIdentifierImpl, body: EdgeInsets
+Type: SimpleToken, body: .
+Type: SimpleIdentifierImpl, body: fromLTRB
+Type: StringToken, body: InkWell
+Type: SimpleIdentifierImpl, body: child
+Type: SimpleToken, body: :
+Type: KeywordToken, body: new
+Type: ConstructorNameImpl, body: Center
+Type: ArgumentListImpl, body: (child: const Text('Plugin example app'))
+Type: SimpleIdentifierImpl, body: onTap
+Type: SimpleToken, body: :
+Type: FormalParameterListImpl, body: ()
+Type: BlockFunctionBodyImpl, body: {}
+Type: StringToken, body: EdgeInsets
+Type: StringToken, body: fromLTRB
+Type: StringToken, body: child
+Type: TypeNameImpl, body: Center
+Type: BeginToken, body: (
+Type: NamedExpressionImpl, body: child: const Text('Plugin example app')
+Type: SimpleToken, body: )
+Type: StringToken, body: onTap
+Type: BeginToken, body: (
+Type: SimpleToken, body: )
+Type: BlockImpl, body: {}
+Type: SimpleIdentifierImpl, body: Center
+Type: LabelImpl, body: child:
+Type: InstanceCreationExpressionImpl, body: const Text('Plugin example app')
+Type: BeginToken, body: {
+Type: SimpleToken, body: }
+Type: StringToken, body: Center
+Type: SimpleIdentifierImpl, body: child
+Type: SimpleToken, body: :
+Type: KeywordToken, body: const
+Type: ConstructorNameImpl, body: Text
+Type: ArgumentListImpl, body: ('Plugin example app')
+Type: StringToken, body: child
+Type: TypeNameImpl, body: Text
+Type: BeginToken, body: (
+Type: SimpleStringLiteralImpl, body: 'Plugin example app'
+Type: SimpleToken, body: )
+Type: SimpleIdentifierImpl, body: Text
+Type: StringToken, body: 'Plugin example app'
+Type: StringToken, body: Text
+
