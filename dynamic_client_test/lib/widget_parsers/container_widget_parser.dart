@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'dynamic_widget.dart';
 import 'package:dynamic_client_test/utils.dart';
 class ContainerWidgetParser extends WidgetParser {
-  @override
-  bool forWidget(String widgetName) {
-    return "Container" == widgetName;
-  }
 
   @override
   Widget parse(Map<String, dynamic> map) {
