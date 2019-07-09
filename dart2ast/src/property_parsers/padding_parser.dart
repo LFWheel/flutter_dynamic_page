@@ -7,11 +7,12 @@ class Paddingparser extends BaseParser{
     if(exp is InstanceCreationExpression){
       print("parse padding");
       print(exp.constructorName?.toSource());
-      List paddings = [];
+      String paddings = '';
       if('EdgeInsets.fromLTRB' == exp.constructorName?.toSource()){
         exp.argumentList.arguments.forEach((arg){
-          paddings.add(arg.toSource());
+          paddings = paddings+arg.toSource()+',';
         });
+        paddings = paddings.substring(0,paddings.length-1);
       }
       return paddings;
     }else{

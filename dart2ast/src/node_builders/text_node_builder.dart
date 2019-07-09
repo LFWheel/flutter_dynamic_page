@@ -8,9 +8,9 @@ class TextNodeBuilder extends BaseNodeBuilder{
     NodeList<Expression> argsExps = insc.argumentList.arguments;
     for(Expression exp in argsExps){
       if(exp is SimpleStringLiteral){
-        nodeInfoMap['text'] = exp.value;
+        nodeInfoMap['data'] = exp.value;
       }else{
-        nodeInfoMap['text'] = exp.toSource();
+        nodeInfoMap['data'] = exp.toSource();
       }
       print("TextNodeBuilder :"+exp.runtimeType.toString());
       print("TextNodeBuilder exp:"+exp.toSource());

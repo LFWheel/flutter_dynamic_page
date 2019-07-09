@@ -57,8 +57,8 @@ abstract class WidgetParser {
       int arrStartIndex = currentPath.indexOf('[');
       int arrEndIndex = currentPath.indexOf(']');
       if(arrStartIndex>=0 && arrEndIndex>=0){
-          pathsResult.add(currentPath.substring(0,arrStartIndex));
-          pathsResult.add(currentPath.substring(arrStartIndex,arrEndIndex+1));
+        pathsResult.add(currentPath.substring(0,arrStartIndex));
+        pathsResult.add(currentPath.substring(arrStartIndex,arrEndIndex+1));
       }else{
         pathsResult.add(currentPath);
       }
