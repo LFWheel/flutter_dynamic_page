@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'container_widget_parser.dart';
+import 'text_widget_parser.dart';
 import 'dart:convert';
 import 'package:logging/logging.dart';
 class DynamicWidgetBuilder{
@@ -9,7 +10,8 @@ class DynamicWidgetBuilder{
     this.data = data;
   }
   static final _parsers = {
-    "Container":ContainerWidgetParser()
+    "Container":ContainerWidgetParser(),
+    "Text":TextWidgetParser()
   };
   
   Widget build(String json) {
@@ -40,4 +42,37 @@ abstract class WidgetParser {
     this.data = data;
   }
   
+  //eg : data.goods[0].specs[0].name => data['goods'][0]['specs'][0]['name']
+  dynamic parseData(String dataStr){
+    if(data == null || dataStr == null || !dataStr.startsWith("data.")){
+      return dataStr;
+    }
+    List<String> paths = dataStr.split(".");//此时是这样的['data',‘goods[0]’,'specs[0]','name']
+    List<String> pathsResult = [];//用来存这样的['goods','[0]','specs','[0]','name']
+    for(int i = 0; i < paths.length; i++){
+      if(i == 0 && 'data' == paths[i]){
+        continue;
+      }
+      String currentPath = paths[i];
+      int arrStartIndex = currentPath.indexOf('[');
+      int arrEndIndex = currentPath.indexOf(']');
+      if(arrStartIndex>=0 && arrEndIndex>=0){
+          pathsResult.add(currentPath.substring(0,arrStartIndex));
+          pathsResult.add(currentPath.substring(arrStartIndex,arrEndIndex+1));
+      }else{
+        pathsResult.add(currentPath);
+      }
+    }
+    dynamic value = data;
+    for(String path in pathsResult){
+      print(path);
+      if(path.indexOf('[')>=0){
+        value = value[int.parse(path.substring(1,path.indexOf(']')))];
+      }else{
+        value = value[path];
+      }
+    }
+    print(value);
+    return value;
+  }
 }

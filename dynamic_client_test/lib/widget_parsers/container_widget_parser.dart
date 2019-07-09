@@ -12,9 +12,12 @@ class ContainerWidgetParser extends WidgetParser {
     EdgeInsetsGeometry margin = parseEdgeInsetsGeometry(map['margin']);
     EdgeInsetsGeometry padding = parseEdgeInsetsGeometry(map['padding']);
     Map<String, dynamic> childMap = map['child'];
-    // Widget child = childMap == null
-    //     ? null
-    //     : DynamicWidgetBuilder.buildFromMap(childMap, listener);
+    Widget child = null;
+    if(null!=childMap){
+      DynamicWidgetBuilder builder = new DynamicWidgetBuilder();
+      builder.withData(data);
+      child = builder.buildFromMap(childMap);
+    }
 
     String clickEvent =
     map.containsKey("click_event") ? map['click_event'] : "";
@@ -27,7 +30,7 @@ class ContainerWidgetParser extends WidgetParser {
       width: map['width'],
       height: map['height'],
       constraints: constraints,
-      //child: child,
+      child: child,
     );
    return containerWidget;
     // if (listener != null && clickEvent!=null) {
