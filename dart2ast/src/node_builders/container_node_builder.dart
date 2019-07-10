@@ -3,6 +3,7 @@ import '../property_parsers/property_parser.dart';
 import 'base_node_builder.dart';
 import 'widget_node_builder.dart';
 class ContainerNodeBuilder extends BaseNodeBuilder{
+  //todo:support decoration..property
   @override
   Map<String, dynamic> buildNode(InstanceCreationExpression insc) {
     Map<String,dynamic> nodeInfoMap = new Map();
@@ -23,6 +24,9 @@ class ContainerNodeBuilder extends BaseNodeBuilder{
           nodeInfoMap[propertyName] = PropertyParser.getParser(propertyName)?.parse(exp.expression);
         }
       }
+    }
+    if(nodeInfoMap['color']!=null && nodeInfoMap['decoration']!=null){
+      throw new Exception("Container的color属性不能与decoration属性同时指定");
     }
     return nodeInfoMap;
   }

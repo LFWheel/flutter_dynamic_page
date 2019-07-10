@@ -1,9 +1,15 @@
+
+import 'package:dynamic_widget/dynamic_widget.dart';
 import 'package:flutter/material.dart';
 class PageExample extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    //DynamicWidgetBuilder();
     return new Container(
-      margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
+      color: new Color(0xffFFFF00),
+      height: 200,
+      width: 200,
+      margin: const EdgeInsets.fromLTRB(20, 20, 20, 20),
       child: new Text(
         "testpagetestpagetestpagetestpage",
         textAlign: TextAlign.center,
