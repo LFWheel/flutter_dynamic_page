@@ -7,7 +7,7 @@ packages:
       name: analyzer
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.36.3"
+    version: "0.36.4"
   args:
     dependency: transitive
     description:
@@ -56,14 +56,14 @@ packages:
       name: csslib
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.16.0"
+    version: "0.16.1"
   front_end:
     dependency: transitive
     description:
       name: front_end
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.1.18"
+    version: "0.1.19"
   glob:
     dependency: transitive
     description:
@@ -84,7 +84,7 @@ packages:
       name: kernel
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.3.18"
+    version: "0.3.19"
   meta:
     dependency: transitive
     description:
@@ -156,4 +156,4 @@ packages:
     source: hosted
     version: "2.1.16"
 sdks:
-  dart: ">=2.1.0 <3.0.0"
+  dart: ">=2.2.2 <3.0.0"

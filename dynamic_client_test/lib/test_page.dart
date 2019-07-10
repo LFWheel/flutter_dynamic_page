@@ -5,7 +5,12 @@ class DynamicPage extends StatelessWidget{
     "goods":[{"name":"apple","price":"8990"},{"name":"orange","price":"890"}]
   };
   String src = r'''
-{"type":"Container","alignment":"topLeft","color":"#e4e4e4","width":200.0,"height":200.0,"margin":"12.0,8.0,12.0,0.0","child":{"type":"Text","data":"data.goods[0].name"}}
+{"type":"Container","margin":"20,20,20,20",
+"child":{"type":"Text",
+"data":"testpagetestpagetestpagetestpage",
+"textAlign":"center","textDirection":"rtl","overflow":"ellipsis",
+"textScaleFactor":0.9,"maxLines":1,"semanticsLabel":"www",
+"style":{"color":"ffefe6e6","fontWeight":"bold","fontSize":33.0}}}
   ''';
   @override
   Widget build(BuildContext context) {

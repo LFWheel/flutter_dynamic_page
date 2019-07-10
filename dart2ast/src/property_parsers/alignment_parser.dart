@@ -5,7 +5,7 @@ class AlignmentParser extends BaseParser{
   parse(Expression exp) {
     if(exp is PrefixedIdentifier){
       PrefixedIdentifier pexp = exp;
-      print(pexp.toString());
+      return exp.identifier.toSource();
     }else{
       print("alignment属性赋值不规范");
       return null;

@@ -5,18 +5,6 @@ import 'dart:io';
 import 'dart:convert';
 import './node_builders/container_node_builder.dart';
 //code to parse
-String src = r"""
-import 'package:mistletoe/mistletoe.dart';
-var o = new Object();
-main(){
-  f(o);
-}
-f(p){
-  var o = p;
-  o = o as Object;
-  print(o);
-}
-""";
 String src2 = r"""
 import 'package:flutter/material.dart';
 
@@ -41,35 +29,28 @@ Widget build(BuildContext context) {
     return new Container(
       alignment: Alignment.center,
       padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 0.0),
-      child: const Text(data.text.titles[0])
+      child: const Text(
+        "data.text.titles[0]",
+        style: new TextStyle(
+        fontSize: 12,
+        fontStyle: FontStyle.italic,
+        fontWeight: FontWeight.bold,
+        color: new Color(0xffef6666)
+      )
+        )
     );
   }
 """;
 main() async {
-//  var src = await new File('./lib/mistletoe.dart').readAsString();
-  var ast = parseCompilationUnit(src3
+ var src = await new File('/Users/zj1994/Desktop/flutter_projects/flutter_dynamic_page/dynamic_client_test/lib/page.dart').readAsString();
+print(src);
+  var ast = parseCompilationUnit(src
     ,parseFunctionBodies: true);
   var nodes = flatten_tree(ast);
   for(var node in nodes){
     if(node is InstanceCreationExpression){
       Map<String,dynamic> nodeMap = ContainerNodeBuilder().buildNode(node);
-
       print(jsonEncode(nodeMap));
-      //print(node.constructorName.toString());
-      // node.argumentList.arguments.forEach((e){
-      //   //show(e);
-        
-      //   if(e is NamedExpression){
-      //     print(e.name.label.toSource());
-      //     //print(e.expression.toSource());
-      //     if(e.expression is InstanceCreationExpression){
-      //       print("proper:"+e.expression.toSource());
-      //     }else{
-      //       print("other:"+e.expression.toSource());
-      //       print("other:${e.expression.runtimeType}");
-      //     }
-      //   }
-      // });
       break;
     }
   }
