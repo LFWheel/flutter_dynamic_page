@@ -6,10 +6,29 @@ class PageExample extends StatelessWidget{
   Widget build(BuildContext context) {
     //DynamicWidgetBuilder();
     return new Container(
-      color: new Color(0xffFFFF00),
       height: 200,
       width: 200,
       margin: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+      decoration: new BoxDecoration(
+        border: new Border(
+          top: new BorderSide(
+            color: new Color(0xff),
+            width: 2.0,
+            style: BorderStyle.solid
+          ),
+          right: new BorderSide(
+            color: new Color(0xff),
+            width: 4.0,
+            style: BorderStyle.none
+          )
+          ),
+        color: new Color(0xff),
+        shape: BoxShape.circle,
+        borderRadius: const BorderRadius.only(
+          topLeft: const Radius.circular(4),
+          topRight: const Radius.circular(4.0),
+        )
+      ),
       child: new Text(
         "testpagetestpagetestpagetestpage",
         textAlign: TextAlign.center,

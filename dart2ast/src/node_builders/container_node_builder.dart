@@ -1,4 +1,5 @@
 import 'package:analyzer/analyzer.dart';
+import '../property_parsers/decoration_parser.dart';
 import '../property_parsers/property_parser.dart';
 import 'base_node_builder.dart';
 import 'widget_node_builder.dart';
@@ -11,7 +12,8 @@ class ContainerNodeBuilder extends BaseNodeBuilder{
     nodeInfoMap['type'] = 'Container';
     for(Expression exp in argsExps){
       if(exp is NamedExpression){
-        if('child' == exp.name.label.toSource()){
+        String label = exp.name.label.toSource();
+        if('child' == label){
           if(exp.expression is InstanceCreationExpression){
             InstanceCreationExpression inExp = exp.expression;
             String type = inExp.constructorName.toSource();
@@ -19,6 +21,8 @@ class ContainerNodeBuilder extends BaseNodeBuilder{
           }else{
             print("Container child属性未使用const或new赋值");
           }
+        }else if('decoration' == label){
+          nodeInfoMap[label] = DecorationParser().parse(exp.expression);
         }else{
           String propertyName = exp.name.label.toSource();
           nodeInfoMap[propertyName] = PropertyParser.getParser(propertyName)?.parse(exp.expression);
