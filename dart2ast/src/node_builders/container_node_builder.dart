@@ -17,7 +17,7 @@ class ContainerNodeBuilder extends BaseNodeBuilder{
           if(exp.expression is InstanceCreationExpression){
             InstanceCreationExpression inExp = exp.expression;
             String type = inExp.constructorName.toSource();
-            nodeInfoMap['child'] = WidgetNodeBuilder.getNodeBuilder(type).buildNode(inExp);
+            nodeInfoMap['child'] = WidgetNodeBuilder.getNodeBuilder(type)?.buildNode(inExp);
           }else{
             print("Container child属性未使用const或new赋值");
           }

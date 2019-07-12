@@ -4,7 +4,7 @@ import 'base_parser.dart';
 import 'color_parser.dart';
 import 'double_value_parser.dart';
 import 'enum_value_parser.dart';
-//暂不支持image属性
+//暂不支持image,shadow,gradient,backgroundBlendMode属性
 class DecorationParser extends BaseParser{
   @override
   parse(Expression exp) {
@@ -21,6 +21,8 @@ class DecorationParser extends BaseParser{
             decoInfo[label] = BorderParser().parse(argExp.expression);
           }else if('borderRadius' == label){
             decoInfo[label] = BorderRadiusParser().parse(argExp.expression);
+          }else if('shape' == label){
+            decoInfo[label] = EnumValueParser().parse(argExp.expression);
           }
         }
       }
@@ -119,8 +121,11 @@ class RadiusParser extends BaseParser{
       String consName = exp.constructorName.toSource();
       if('Radius.circular' == consName){
         return DoubleValueParser().parse(exp.argumentList.arguments[0]);//只会有一个参数
+      }else{
+        print("Radius属性只支持Radius.circular构造");
       }
     }
+    print("radius属性未使用const赋值");
     return null;
   }
 

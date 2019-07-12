@@ -1,10 +1,12 @@
 import 'base_node_builder.dart';
 import 'container_node_builder.dart';
 import 'text_node_builder.dart';
+import 'list_view_node_builder.dart';
 class WidgetNodeBuilder{
   static final Map<String,BaseNodeBuilder> _nodeBuilders = {
     'Container':ContainerNodeBuilder(),
-    'Text': TextNodeBuilder()
+    'Text': TextNodeBuilder(),
+    'ListViewDelegateWidget':ListViewNodeNuilder()
   };
 
   static BaseNodeBuilder getNodeBuilder(String type){

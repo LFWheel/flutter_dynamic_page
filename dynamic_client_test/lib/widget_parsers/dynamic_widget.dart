@@ -1,3 +1,4 @@
+import 'package:dynamic_client_test/widget_parsers/listview_widget_parser.dart';
 import 'package:flutter/material.dart';
 import 'container_widget_parser.dart';
 import 'text_widget_parser.dart';
@@ -11,7 +12,8 @@ class DynamicWidgetBuilder{
   }
   static final _parsers = {
     "Container":ContainerWidgetParser(),
-    "Text":TextWidgetParser()
+    "Text":TextWidgetParser(),
+    "ListView":ListViewWidgetParser()
   };
   
   Widget build(String json) {
