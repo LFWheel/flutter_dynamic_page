@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dynamic_widget.dart';
 import 'package:dynamic_client_test/utils.dart';
+//TODO: decoration, foregroundDecoration and transform properties to be implemented.
 class ContainerWidgetParser extends WidgetParser {
 
   @override
@@ -8,7 +9,6 @@ class ContainerWidgetParser extends WidgetParser {
     Alignment alignment = parseAlignment(map['alignment']);
     Color color = parseHexColor(map['color']);
     BoxConstraints constraints = parseBoxConstraints(map['constraints']);
-    //TODO: decoration, foregroundDecoration and transform properties to be implemented.
     EdgeInsetsGeometry margin = parseEdgeInsetsGeometry(map['margin']);
     EdgeInsetsGeometry padding = parseEdgeInsetsGeometry(map['padding']);
     Map<String, dynamic> childMap = map['child'];

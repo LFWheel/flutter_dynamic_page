@@ -1,3 +1,4 @@
+import 'package:dynamic_client_test/widget_parsers/image_widget_parser.dart';
 import 'package:dynamic_client_test/widget_parsers/listview_widget_parser.dart';
 import 'package:flutter/material.dart';
 import 'container_widget_parser.dart';
@@ -13,6 +14,7 @@ class DynamicWidgetBuilder{
   static final _parsers = {
     "Container":ContainerWidgetParser(),
     "Text":TextWidgetParser(),
+    "Image":ImageWidgetParser(),
     "ListView":ListViewWidgetParser()
   };
   
