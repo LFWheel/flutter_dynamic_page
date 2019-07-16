@@ -9,15 +9,22 @@ class PageExample extends StatelessWidget {
   Widget build(BuildContext context) {
     //DynamicWidgetBuilder();
     return new Container(
-      child: new Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          new Text('123'),
-          new Text('456'),
-          new Text('789')
-        ],
+      child: new ListViewDelegateWidget(
+        new ListViewParams(
+          'data.goods',
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              new Image.network("data.img",width:90,height:90,fit:BoxFit.fill),
+              new Column(
+                children: <Widget>[
+                  new Text("data.name"),
+                  new Text("data.price")
+                ],
+              )
+            ],
+          )
+        )
       )
       );
   }

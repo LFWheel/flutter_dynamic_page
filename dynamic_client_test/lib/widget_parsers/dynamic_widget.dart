@@ -1,6 +1,7 @@
 import 'package:dynamic_client_test/widget_parsers/image_widget_parser.dart';
 import 'package:dynamic_client_test/widget_parsers/listview_widget_parser.dart';
 import 'package:flutter/material.dart';
+import 'column_row_widget_parser.dart';
 import 'container_widget_parser.dart';
 import 'text_widget_parser.dart';
 import 'dart:convert';
@@ -15,7 +16,9 @@ class DynamicWidgetBuilder{
     "Container":ContainerWidgetParser(),
     "Text":TextWidgetParser(),
     "Image":ImageWidgetParser(),
-    "ListView":ListViewWidgetParser()
+    "ListView":ListViewWidgetParser(),
+    "Column":ColumnWidgetParser(),
+    "Row":RowWidgetParser()
   };
   
   Widget build(String json) {
@@ -34,6 +37,14 @@ class DynamicWidgetBuilder{
 
     log.warning("Not support type: $widgetName");
     return null;
+  }
+  List<Widget> buildWidgets(
+      List<dynamic> values) {
+    List<Widget> rt = [];
+    for (var value in values) {
+      rt.add(buildFromMap(value));
+    }
+    return rt;
   }
 }
 abstract class WidgetParser {

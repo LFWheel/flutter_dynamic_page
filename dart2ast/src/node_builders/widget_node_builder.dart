@@ -1,5 +1,5 @@
 import 'base_node_builder.dart';
-import 'column_node_builder.dart';
+import 'column_row_node_builder.dart';
 import 'container_node_builder.dart';
 import 'image_node_builder.dart';
 import 'text_node_builder.dart';
@@ -11,7 +11,8 @@ class WidgetNodeBuilder{
     'Image.network':ImageNodeBuilder(),
     'Image.asset':ImageNodeBuilder(),
     'ListViewDelegateWidget':ListViewNodeNuilder(),
-    'Column':ColumnNodeBuilder()
+    'Column':ColumnRowNodeBuilder(),
+    'Row':ColumnRowNodeBuilder(),
   };
 
   static BaseNodeBuilder getNodeBuilder(String type){

@@ -4,12 +4,12 @@ import '../property_parsers/enum_value_parser.dart';
 import 'base_node_builder.dart';
 import 'widget_node_builder.dart';
 
-class ColumnNodeBuilder extends BaseNodeBuilder{
+class ColumnRowNodeBuilder extends BaseNodeBuilder{
   @override
   Map<String, dynamic> buildNode(InstanceCreationExpression insc) {
     print("ColumnNodeBuilder build start");
     Map<String,dynamic> columnInfo = {};
-    columnInfo['type'] = 'Column';
+    columnInfo['type'] = insc.constructorName.toSource();
     NodeList<Expression> argExps = insc.argumentList.arguments;
     for(Expression exp in argExps){
       if(exp is NamedExpression){
@@ -23,7 +23,7 @@ class ColumnNodeBuilder extends BaseNodeBuilder{
               String childConstructName = e.constructorName.toSource();
               children.add(WidgetNodeBuilder.getNodeBuilder(childConstructName).buildNode(e));
             }else{
-              print("Column的子组件未使用new或者const构造");
+              print("Column,Row的子组件未使用new或者const构造");
             }
           }
           columnInfo['children'] = children;
