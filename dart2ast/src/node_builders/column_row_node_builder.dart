@@ -7,7 +7,6 @@ import 'widget_node_builder.dart';
 class ColumnRowNodeBuilder extends BaseNodeBuilder{
   @override
   Map<String, dynamic> buildNode(InstanceCreationExpression insc) {
-    print("ColumnNodeBuilder build start");
     Map<String,dynamic> columnInfo = {};
     columnInfo['type'] = insc.constructorName.toSource();
     NodeList<Expression> argExps = insc.argumentList.arguments;
